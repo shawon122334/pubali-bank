@@ -111,8 +111,14 @@
             // document.getElementById("currentWithdraw").innerText = totalWithdraw;
 
             // document.getElementById("withdrawAmount").value = "";
-            const withdrawAmount = getInputElement("withdrawAmount");
-            console.log(withdrawAmount);
+
+            //getting withdraw amount by function
+             const withdrawNumber = getInputElement("withdrawAmount");
+            
+            //getting withdraw amount and adding to withdraw current value and replacing
+            updateSpanText("currentWithdraw",withdrawNumber);
+            updateSpanText("currentBalance",-1 * withdrawNumber);
+            document.getElementById("withdrawAmount").value="";
 
         })
         function getInputElement(id) {
